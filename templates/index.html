@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            width: 50%;
+            margin: auto;
+        }
+        table{
+            margin: 30px auto;
+        }
+        table, th, td{
+            border: 3px solid blue;
+            border-collapse: collapse;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="GET">
+        <input type="search" placeholder="Search" name="qidirish">
+        <button type="submit">Search</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>T/r</th>
+                <th>Ism</th>
+                <th>Familiya</th>
+                <th>Yosh</th>
+                <th>Adrress</th>
+                <th>Telefon</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.ism }}</td>
+                <td>{{ post.fam }}</td>
+                <td>{{ post.yosh }}</td>
+                <td>{{ post.adrress }}</td>
+                <td>{{ post.telefon }}</td>
+            </tr>
+            {% endfor %}    
+        </tbody>
+    </table>
+</body>
+</html>
